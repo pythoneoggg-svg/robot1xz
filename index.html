@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot Programming</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>🤖 Robot Programming</h1>
+
+        <div class="canvas-wrapper">
+            <canvas id="canvas" width="400" height="350"></canvas>
+            <div id="particles"></div>
+        </div>
+
+        <div id="console"></div>
+
+        <div class="btn-group">
+            <button onclick="runCode()" class="btn-run">▶ Запустить</button>
+            <button onclick="clearConsole()" class="btn-secondary">🗑 Очистить</button>
+            <button onclick="showMemory()" class="btn-secondary">🧠 Память</button>
+            <button onclick="resetRobot()" class="btn-secondary">🔄 Сброс</button>
+            <button onclick="showHelp()" class="btn-secondary">❓ Помощь</button>
+        </div>
+
+        <div class="cmd-input">
+            <input id="cmd" placeholder="Введи команду... (Enter = запуск)" autofocus>
+            <button onclick="runCode()" class="btn-run">▶</button>
+        </div>
+
+        <div class="quick-commands">
+            <span>Быстрые команды:</span>
+            <button onclick="quickCmd('поднять правую руку')">✋ Правая</button>
+            <button onclick="quickCmd('поднять левую руку')">✋ Левая</button>
+            <button onclick="quickCmd('поднять правую ногу')">🦶 Правая</button>
+            <button onclick="quickCmd('поднять левую ногу')">🦶 Левая</button>
+            <button onclick="quickCmd('иди')">🚶 Идти</button>
+            <button onclick="quickCmd('танцевать')">💃 Танец</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
