@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0a0a0f;
+    color: #e0e0e0;
+    font-family: 'Courier New', monospace;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 420px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #00ff88;
+    font-size: 20px;
+    text-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+}
+
+.canvas-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+canvas {
+    border: 2px solid #00ff88;
+    border-radius: 12px;
+    background: #0f0f1a;
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.1), inset 0 0 50px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+#particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+#console {
+    background: #0a0a0f;
+    border: 1px solid #222;
+    border-radius: 8px;
+    padding: 10px;
+    min-height: 120px;
+    max-height: 180px;
+    overflow-y: auto;
+    font-size: 11px;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+#console .error {
+    color: #ff4444;
+}
+
+#console .success {
+    color: #00ff88;
+}
+
+#console .info {
+    color: #4488ff;
+}
+
+.btn-group {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    margin: 8px 0;
+}
+
+.btn-run {
+    padding: 10px 18px;
+    background: #00ff88;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+}
+
+.btn-run:active {
+    transform: scale(0.95);
+}
+
+.btn-secondary {
+    padding: 8px 12px;
+    background: #222;
+    color: #aaa;
+    border: 1px solid #333;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+}
+
+.btn-secondary:hover {
+    background: #333;
+}
+
+.cmd-input {
+    display: flex;
+    gap: 5px;
+    margin: 8px 0;
+}
+
+input {
+    flex: 1;
+    padding: 12px;
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: #fff;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #00ff88;
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.2);
+}
+
+.quick-commands {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.quick-commands span {
+    color: #555;
+    font-size: 11px;
+    margin-right: 5px;
+}
+
+.quick-commands button {
+    padding: 5px 8px;
+    background: #1a1a2e;
+    color: #00ff88;
+    border: 1px solid #00ff8844;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 10px;
+    font-family: 'Courier New', monospace;
+}
+
+.quick-commands button:active {
+    background: #00ff8822;
+}
+
+.memory-item {
+    color: #00ff88;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: #00ff88;
+    border-radius: 50%;
+    animation: particleFade 0.5s ease-out forwards;
+    pointer-events: none;
+}
+
+@keyframes particleFade {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(var(--dx), var(--dy)) scale(0);
+    }
+}
